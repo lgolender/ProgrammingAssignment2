@@ -1,7 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## makeCacheMatrix creates an object that holds a matrix (x) and its inverse (mi). 
+## The object has getter and setter for original matrix (get, set) and for the inverse (getinverse, setinverse)
 
 makeCacheMatrix <- function(x = matrix()) {
     mi <- NULL
@@ -16,6 +14,11 @@ makeCacheMatrix <- function(x = matrix()) {
          setinverse = setinverse,
          getinverse = getinverse)
 }
+
+
+## cacheSolve receives x, an object created by makeCacheMatrix and if the inverse of the matrix stored in x
+## was calculated before, the inverse matrix(mi) would be returned, otherwise the inverse(mi) is calculated, stored in x,
+## then returned to the caller
 
 cacheSolve <- function(x, ...) {
     mi <- x$getinverse()
